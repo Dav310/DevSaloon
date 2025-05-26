@@ -5,7 +5,6 @@ import { Scissors } from "lucide-react";
 import Link from "next/link";
 import Team from "./team/page";
 import Pricing from "./pricing/page";
-import Booking from "./booking/page";
 import About from "./about/page";
 import Contact from "./contact/page";
 
