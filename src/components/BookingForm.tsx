@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { supabase } from "@/lib/supabaseClient";
 
 export default function BookingForm() {
   const [form, setForm] = useState({ name: "", email: "", date: "", service: "" });
@@ -13,17 +12,14 @@ export default function BookingForm() {
     e.preventDefault();
     setLoading(true);
     setMessage("");
-    
-    const { error } = await supabase.from("appointments").insert([form]);
-    if (error) {
-      setMessage("Something went wrong. Please try again.");
-      setMessageType('error');
-    } else {
+
+    // Simulate booking logic (replace with your own logic if needed)
+    setTimeout(() => {
       setMessage("Appointment booked successfully!");
       setMessageType('success');
       setForm({ name: "", email: "", date: "", service: "" });
-    }
-    setLoading(false);
+      setLoading(false);
+    }, 1000);
   }
 
   return (
